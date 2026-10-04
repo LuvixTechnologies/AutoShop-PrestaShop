@@ -1,0 +1,41 @@
+# Les valeurs viennent du fichier .env (voir .env) ; les défauts servent de repli.
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWD:-admin}
+      MYSQL_DATABASE: ${DB_NAME:-prestashop}
+    volumes:
+      - dbdata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$$MYSQL_ROOT_PASSWORD"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  prestashop:
+    image: prestashop/prestashop:latest
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${PS_PORT:-8080}:80"
+    environment:
+      DB_SERVER: db
+      DB_NAME: ${DB_NAME:-prestashop}
+      DB_USER: root
+      DB_PASSWD: ${DB_PASSWD:-admin}
+      DB_PREFIX: ${DB_PREFIX:-ps_}
+      PS_INSTALL_AUTO: 1
+      PS_DOMAIN: localhost:${PS_PORT:-8080}
+      PS_FOLDER_ADMIN: ${PS_FOLDER_ADMIN:-admin-dev}
+      PS_COUNTRY: FR
+      PS_LANGUAGE: fr
+      ADMIN_MAIL: ${ADMIN_MAIL:-demo@example.com}
+      ADMIN_PASSWD: ${ADMIN_PASSWD:-ChangeMe_12345}
+    volumes:
+      - psdata:/var/www/html
+
+volumes:
+  dbdata:
+  psdata:
