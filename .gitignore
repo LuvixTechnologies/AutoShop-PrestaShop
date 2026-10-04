@@ -1,0 +1,6 @@
+.env
+shop.local.json
+.ps_api_key
+exports/
+__pycache__/
+.pytest_cache/
