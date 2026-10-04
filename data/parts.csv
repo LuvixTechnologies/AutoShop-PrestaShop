@@ -1,0 +1,31 @@
+sku,nom,marque,categorie,prix_ht,stock,compat,description
+FRE-001,Plaquettes avant sport Celica,Touge Works,Freinage,62.50,8,VEH:CEL,Plaquettes avant à friction sport pour usage route et circuit occasionnel. Données fictives de démonstration.
+FRE-002,Plaquettes avant sport Prelude,Touge Works,Freinage,58.00,6,VEH:PRE,Plaquettes avant à friction sport pour usage route et circuit occasionnel. Données fictives de démonstration.
+FRE-003,Plaquettes avant sport Silvia,Touge Works,Freinage,64.00,5,VEH:SIL,Plaquettes avant à friction sport pour usage route et circuit occasionnel. Données fictives de démonstration.
+FRE-004,Disques avant rainurés 280 mm,Shuto Parts,Freinage,139.00,4,ENG:CEL-3SGTE,Paire de disques avant rainurés pour version turbo. Données fictives de démonstration.
+FRE-005,Kit durites de frein inox,Kaizen Racing,Freinage,75.00,12,ALL,Kit de durites de frein tressées inox pour une réponse de pédale plus ferme. Données fictives de démonstration.
+FRE-006,Liquide de frein DOT4 racing 1 L,Kaizen Racing,Freinage,19.90,40,ALL,Liquide de frein DOT4 à point d'ébullition élevé pour usage sportif. Données fictives de démonstration.
+SUS-001,Combinés filetés Celica,Shuto Parts,Suspension,890.00,3,VEH:CEL,Kit combinés filetés réglables en hauteur et en dureté. Données fictives de démonstration.
+SUS-002,Combinés filetés Prelude,Shuto Parts,Suspension,870.00,2,VEH:PRE,Kit combinés filetés réglables en hauteur et en dureté. Données fictives de démonstration.
+SUS-003,Combinés filetés Silvia,Shuto Parts,Suspension,910.00,3,VEH:SIL,Kit combinés filetés réglables en hauteur et en dureté. Données fictives de démonstration.
+SUS-004,Barre anti-rapprochement avant Celica,Touge Works,Suspension,119.00,5,VEH:CEL,Barre anti-rapprochement avant pour rigidifier la caisse. Données fictives de démonstration.
+SUS-005,Barre anti-rapprochement avant Prelude,Touge Works,Suspension,115.00,4,VEH:PRE,Barre anti-rapprochement avant pour rigidifier la caisse. Données fictives de démonstration.
+SUS-006,Silentblocs polyuréthane de triangle,Kaizen Racing,Suspension,49.00,10,VEH:CEL|VEH:SIL,Jeu de silentblocs polyuréthane pour supprimer le jeu des triangles. Données fictives de démonstration.
+ADM-001,Filtre à air sport 3S-GE,Kaizen Racing,Admission,54.00,9,ENG:CEL-3SGE,Filtre à air lavable haut débit pour moteur atmosphérique. Données fictives de démonstration.
+ADM-002,Kit admission directe 3S-GTE,Touge Works,Admission,189.00,3,ENG:CEL-3SGTE,Kit d'admission directe avec filtre conique pour moteur turbo. Données fictives de démonstration.
+ADM-003,Filtre à air sport H22A,Kaizen Racing,Admission,52.00,7,ENG:PRE-H22A,Filtre à air lavable haut débit pour moteur atmosphérique. Données fictives de démonstration.
+ADM-004,Filtre à air sport F20B,Kaizen Racing,Admission,52.00,5,ENG:PRE-F20B,Filtre à air lavable haut débit pour moteur atmosphérique. Données fictives de démonstration.
+ADM-005,Kit admission directe SR20DET,Touge Works,Admission,195.00,2,ENG:SIL-SR20DET,Kit d'admission directe avec filtre conique pour moteur turbo. Données fictives de démonstration.
+ECH-001,Ligne inox cat-back 63 mm Celica,Shuto Parts,Échappement,420.00,2,VEH:CEL,Ligne d'échappement inox après catalyseur. Données fictives de démonstration.
+ECH-002,Ligne inox cat-back 70 mm Silvia,Shuto Parts,Échappement,449.00,2,VEH:SIL,Ligne d'échappement inox après catalyseur. Données fictives de démonstration.
+ECH-003,Collecteur échappement inox SR20DET,Shuto Parts,Échappement,520.00,1,ENG:SIL-SR20DET,Collecteur inox pour moteur turbo avec soudures TIG. Données fictives de démonstration.
+ECH-004,Downpipe 76 mm 3S-GTE,Shuto Parts,Échappement,380.00,2,ENG:CEL-3SGTE,Downpipe 76 mm pour améliorer l'évacuation des gaz sur moteur turbo. Données fictives de démonstration.
+MOT-001,Kit distribution complet 3S,Kaizen Racing,Moteur,169.00,6,ENG:CEL-3SGE|ENG:CEL-3SGTE,Kit courroie avec galets et tendeur pour les moteurs de la famille 3S. Données fictives de démonstration.
+MOT-002,Joint de culasse renforcé F20B,Kaizen Racing,Moteur,98.00,4,ENG:PRE-F20B,Joint de culasse multicouche renforcé pour moteur préparé. Données fictives de démonstration.
+MOT-003,Arbres à cames H22A,Touge Works,Moteur,640.00,1,ENG:PRE-H22A,Paire d'arbres à cames à profil sport. Données fictives de démonstration.
+MOT-004,Intercooler face avant SR20DET,Shuto Parts,Moteur,460.00,2,ENG:SIL-SR20DET,Intercooler à grand volume monté en face avant. Données fictives de démonstration.
+TRA-001,Embrayage renforcé SR20DET,Shuto Parts,Transmission,410.00,2,ENG:SIL-SR20DET,Kit embrayage renforcé pour couple élevé. Données fictives de démonstration.
+HAB-001,Baquet sport fibre,Kaizen Racing,Habitacle,380.00,3,ALL,Baquet en fibre avec rails universels à prévoir. Données fictives de démonstration.
+HAB-002,Volant sport 350 mm,Kaizen Racing,Habitacle,119.00,6,ALL,Volant sport 350 mm en cuir perforé avec moyeu adaptateur vendu séparément. Données fictives de démonstration.
+HAB-003,Manomètre pression turbo,Touge Works,Habitacle,59.00,8,ENG:CEL-3SGTE|ENG:SIL-SR20DET,Manomètre 0-2 bar.
+HAB-004,Kit durites silicone,Touge Works,Habitacle,95.00,4,,Kit de durites silicone pour circuit de refroidissement. Données fictives de démonstration.

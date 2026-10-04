@@ -1,0 +1,7 @@
+engine_id,vehicle_id,code_moteur,cylindree_cc,aspiration,note
+CEL-3SGE,CEL,3S-GE,1998,atmosphérique,
+CEL-3SGTE,CEL,3S-GTE,1998,turbo,
+PRE-H22A,PRE,H22A,2157,atmosphérique,
+PRE-F20B,PRE,F20B,1997,atmosphérique,swap
+SIL-SR20DE,SIL,SR20DE,1998,atmosphérique,
+SIL-SR20DET,SIL,SR20DET,1998,turbo,
