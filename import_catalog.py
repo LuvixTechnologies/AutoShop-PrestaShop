@@ -11,7 +11,7 @@ Usage :
   python import_catalog.py                 # validation + rapport seulement (dry-run)
   python import_catalog.py --import        # validation + rapport + import dans la boutique
 
-Configuration lue dans le .env.example : PS_API_KEY (et PS_URL, sinon http://localhost:PS_PORT).
+Configuration lue dans le .env : PS_API_KEY (et PS_URL, sinon http://localhost:PS_PORT).
 """
 import argparse
 import csv
@@ -509,7 +509,7 @@ def main(argv=None):
 
     url, key = config.shop_url(), os.environ.get("PS_API_KEY")
     if not key:
-        print("PS_API_KEY manquante : renseigne-la dans le .env.example (ou lance bootstrap.py, qui la crée).")
+        print("PS_API_KEY manquante : renseigne-la dans le .env (ou lance bootstrap.py, qui la crée).")
         return 2
     try:
         stats = Importer(PrestaClient(url, key), cat, tax_rules_group=args.tax_rules_group).run()

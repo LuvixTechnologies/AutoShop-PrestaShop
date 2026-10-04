@@ -12,7 +12,7 @@ Usage :
   python setup_shop.py --apply              # nettoyage de la démo + identité
   python setup_shop.py --apply --only clean # seulement le nettoyage
   python setup_shop.py --apply --scope all  # supprime TOUS les produits (dangereux)
-Configuration : fichier .env.example (PS_API_KEY, SHOP_*).
+Configuration : fichier .env (PS_API_KEY, SHOP_*).
 """
 import argparse
 import json
@@ -166,7 +166,7 @@ def main(argv=None):
     config.load_env()
     url, key = config.shop_url(), os.environ.get("PS_API_KEY")
     if not key:
-        print("PS_API_KEY manquante : renseigne-la dans le .env.example (ou lance bootstrap.py, qui la crée).")
+        print("PS_API_KEY manquante : renseigne-la dans le .env (ou lance bootstrap.py, qui la crée).")
         return 2
     client = ic.PrestaClient(url, key)
     if not args.apply:

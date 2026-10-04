@@ -9,7 +9,7 @@ Usage :
   python shop_assets.py                 # tout
   python shop_assets.py --list-home     # liste les modules affichés sur l'accueil
   python shop_assets.py --only images   # ou logo, home
-Configuration : .env.example (PS_API_KEY, SHOP_*, LOGO_PATH, HOME_DISABLE_MODULES).
+Configuration : .env (PS_API_KEY, SHOP_*, LOGO_PATH, HOME_DISABLE_MODULES).
 """
 import argparse
 import json
@@ -192,7 +192,7 @@ def main(argv=None, runner=run):
         return 0
     key = os.environ.get("PS_API_KEY")
     if not key:
-        print("PS_API_KEY manquante : lance bootstrap.py ou renseigne le .env.example.")
+        print("PS_API_KEY manquante : lance bootstrap.py ou renseigne le .env.")
         return 2
     client = ic.PrestaClient(config.shop_url(), key)
     try:

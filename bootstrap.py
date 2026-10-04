@@ -3,13 +3,13 @@
 Installe et peuple la boutique de démonstration en une commande :
 
   1. docker compose up        (PrestaShop + MySQL, installation automatique)
-  2. création d'une clé API   (écrite en base, puis enregistrée dans le .env.example)
+  2. création d'une clé API   (écrite en base, puis enregistrée dans le .env)
   3. nettoyage de la démo     (setup_shop.py : produits, catégories, marques, identité)
   4. import du catalogue      (import_catalog.py : data/*.csv -> produits, filtres, stock)
   5. habillage                (shop_assets.py : images produits, logo, accueil sans promo de démo)
 
 Usage :
-  python bootstrap.py                # (configuration dans .env.example) installe (si besoin), puis nettoie et importe
+  python bootstrap.py                # (configuration dans .env) installe (si besoin), puis nettoie et importe
   python bootstrap.py --reset        # repart de zéro (supprime la base et les volumes Docker)
   python bootstrap.py --skip-install # la boutique tourne déjà : seulement clé API + nettoyage + import
 Prérequis : Docker Desktop (avec « docker compose »), Python 3.9+, pip install -r requirements.txt
@@ -43,12 +43,12 @@ def new_api_key():
 
 
 def get_or_create_key(environ=None, env_path=None):
-    """Clé API depuis PS_API_KEY (.env.example) ; sinon on en génère une et on l'écrit dans le .env.example."""
+    """Clé API depuis PS_API_KEY (.env) ; sinon on en génère une et on l'écrit dans le .env."""
     environ = os.environ if environ is None else environ
     key = environ.get("PS_API_KEY", "").strip()
     if key:
         if not re.fullmatch(r"[A-Z0-9]{32}", key):
-            raise ValueError("PS_API_KEY invalide dans le .env.example : 32 caractères A-Z et 0-9 attendus (ou laisse vide).")
+            raise ValueError("PS_API_KEY invalide dans le .env : 32 caractères A-Z et 0-9 attendus (ou laisse vide).")
         return key
     key = new_api_key()
     config.update_env("PS_API_KEY", key, env_path)
@@ -149,10 +149,10 @@ def main(argv=None):
 
     config.load_env()
     shop_url, admin_url, prefix = config.shop_url(), config.admin_url(), config.get("DB_PREFIX")
-    if not Path(".env.example").exists():
-        print("Pas de fichier .env.example : valeurs par défaut utilisées (copie .env.example en .env.example pour les changer).")
+    if not Path(".env").exists():
+        print("Pas de fichier .env : valeurs par défaut utilisées (copie .env en .env pour les changer).")
     elif config.get("ADMIN_PASSWD") == config.DEFAULTS["ADMIN_PASSWD"]:
-        print("Attention : mot de passe administrateur par défaut. Change ADMIN_PASSWD dans le .env.example.")
+        print("Attention : mot de passe administrateur par défaut. Change ADMIN_PASSWD dans le .env.")
 
     # 1. Docker
     if not args.skip_install:
@@ -223,8 +223,8 @@ def main(argv=None):
     print("\nTerminé.")
     print(f"  Boutique    : {shop_url}")
     print(f"  Back-office : {admin_url}")
-    print(f"  Connexion   : {config.get('ADMIN_MAIL')} (mot de passe : ADMIN_PASSWD dans le .env.example)")
-    print("  Clé API     : PS_API_KEY dans le .env.example (ne la partage pas)")
+    print(f"  Connexion   : {config.get('ADMIN_MAIL')} (mot de passe : ADMIN_PASSWD dans le .env)")
+    print("  Clé API     : PS_API_KEY dans le .env (ne la partage pas)")
     return 0
 
 

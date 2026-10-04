@@ -1,12 +1,12 @@
-"""Configuration par fichier .env.example, partagée par docker compose et les scripts Python.
+"""Configuration par fichier .env, partagée par docker compose et les scripts Python.
 
-Docker Compose lit automatiquement le .env.example du dossier (substitution ${VAR:-défaut}).
+Docker Compose lit automatiquement le .env du dossier (substitution ${VAR:-défaut}).
 Les scripts le chargent avec load_env() sans écraser les variables déjà définies dans l'environnement.
 """
 import os
 from pathlib import Path
 
-ENV_PATH = Path(".env.example")
+ENV_PATH = Path(".env")
 
 DEFAULTS = {
     "PS_PORT": "8080",
@@ -42,7 +42,7 @@ def parse_env(text):
 
 
 def load_env(path=None, environ=None):
-    """Charge le .env.example dans l'environnement (les variables déjà définies gardent la priorité)."""
+    """Charge le .env dans l'environnement (les variables déjà définies gardent la priorité)."""
     path = Path(path) if path else ENV_PATH
     environ = os.environ if environ is None else environ
     if not path.exists():
@@ -54,7 +54,7 @@ def load_env(path=None, environ=None):
 
 
 def update_env(key, value, path=None):
-    """Écrit ou met à jour une variable dans le .env.example (le crée si besoin)."""
+    """Écrit ou met à jour une variable dans le .env (le crée si besoin)."""
     path = Path(path) if path else ENV_PATH
     lines = path.read_text(encoding="utf-8").splitlines() if path.exists() else []
     out, done = [], False
@@ -84,7 +84,7 @@ def admin_url(environ=None):
 
 
 def merge_identity(base, environ=None):
-    """Les variables SHOP_* du .env.example l'emportent sur shop.json."""
+    """Les variables SHOP_* du .env l'emportent sur shop.json."""
     environ = os.environ if environ is None else environ
     merged = dict(base)
     for env_name, key in IDENTITY_ENV.items():
