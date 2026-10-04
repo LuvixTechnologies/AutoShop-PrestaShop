@@ -18,7 +18,7 @@ Format de la colonne `compat` de `parts.csv` : `ALL` (universel), `VEH:CEL` (tou
 
 ## Configuration : le fichier .env
 ```bash
-cp .env .env      # puis édite : mots de passe, port, identité de la boutique
+cp .env.example .env      # puis édite : mots de passe, port, identité de la boutique
 ```
 Le `.env` est lu par Docker Compose **et** par les scripts Python. Il est dans `.gitignore` : ne le publie jamais.
 Les variables déjà définies dans ton terminal l'emportent sur le `.env`. Si tu changes `DB_PASSWD`, `ADMIN_*` ou
@@ -77,16 +77,6 @@ Le rapport est écrit dans `reports/rapport_compatibilite.md`.
 Dans *Paramètres de la boutique > Recherche à facettes* (module Faceted search), créer un modèle de
 filtres avec les caractéristiques **Véhicule**, **Moteur** et **Marque**, appliqué aux catégories.
 Les pièces universelles apparaissent pour tous les véhicules.
-
-## Export au format « liste des produits »
-```bash
-python export_csv.py --start-id 20 --tva 20 --out catalogue.csv
-```
-Génère un CSV au format de l'export du back-office (`Product ID;Image;Nom;Référence;Catégorie;Montant HT;Montant TTC;Quantité`).
-C'est un fichier de lecture, **pas un fichier d'import** : l'import des produits se fait avec `import_catalog.py --import`.
-
-## Tests
-`pytest` vérifie la validation, l'expansion des compatibilités et le flux d'import avec une fausse API.
 
 ## Limites et suite
 - Pas de sélecteur de véhicule dédié : le filtre repose sur les facettes natives.
